@@ -14,3 +14,4 @@ def application(environ, start_response):
     body = '<h1>Hello, %s!</h1>'%(environ['PATH_INFO'][1:] or 'web' + environ['PATH_INFO'][1:])
     return [body.encode('utf_8')]
     
+    
