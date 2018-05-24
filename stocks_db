@@ -1,0 +1,18 @@
+'''
+
+'''
+import sqlite3 
+
+conn = sqlite3.connect('stocks.db')
+cursor = conn.cursor() 
+
+# Create a Table
+cursor.execute(''' CREATE TABLE stocks
+                (date_text, trans_text, symbol_text, qty_real, price_real)
+                ''')
+# Insert Raw Data
+cursor.execute("INSERT INTO stocks VALUES ('2018-01-05', 'BUY', 'RHAT', 100, 35.14)")
+
+# Save the changes
+conn.commit() 
+conn.close()  

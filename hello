@@ -1,0 +1,17 @@
+'''
+
+
+http://localhost:8000 -> Hello web
+
+PATH_INFO
+http://localhost:8000/john -> Hello john
+
+'''
+
+
+def application(environ, start_response):
+    start_response('200 OK', [('Content-Type', 'text/html')])
+    body = '<h1>Hello, %s!</h1>'%(environ['PATH_INFO'][1:] or 'web' + environ['PATH_INFO'][1:])
+    return [body.encode('utf_8')]
+    
+    

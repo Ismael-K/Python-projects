@@ -1,0 +1,19 @@
+'''
+
+'''
+import sqlite3
+
+# Create a connection to the megadb object
+conn = sqlite3.connect("mega.db")
+
+# Create a cursor object used to execute SQL Commands
+cursor = conn.cursor()
+
+# INSERT data
+cursor.execute("INSERT INTO TABLE1 (Col1, Col2, Col3, Col4, Col5) VALUES ('Python1', 'Python2', 'Python3', 'Python4', 'Python5')")
+
+# Commit the changes
+conn.commit()
+
+#Close DB Connection
+conn.close()

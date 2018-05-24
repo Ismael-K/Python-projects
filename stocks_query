@@ -1,0 +1,37 @@
+'''
+
+'''
+import sqlite3 
+
+conn = sqlite3.connect('stocks.db')
+cursor = conn.cursor() 
+
+# To retrieve the data, you have two approaches
+
+# Approach 1
+symbol = 'RHAT'
+cursor.execute("SELECT * FROM stocks where symbol_text = '%s'" % symbol)
+print(cursor.fetchone())
+
+
+# Approach 2 - This is the preferred approach
+val = ('RHAT',)
+cursor.execute('SELECT * FROM STOCKS where symbol_text=?', val)
+print(cursor.fetchone())
+
+# If you need to insert many records at a time, then follow this approach
+
+purchases = [('2018-03-28', 'BUY', 'IBM', 1000, 45.00),
+             ('2018-04-05', 'BUY', 'MSFT', 1000, 72.00),
+             ('2018-03-16', 'SELL', 'IBM', 500, 53.00)
+            ]
+
+cursor.executemany('INSERT INTO stocks VALUES (?, ?, ?, ?, ?)', purchases)
+
+conn.commit()
+conn.close()
+
+
+
+
+

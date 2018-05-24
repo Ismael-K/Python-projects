@@ -1,0 +1,34 @@
+'''
+
+'''
+class Robot:
+    def __init__(self, name, build_year):  #The constructor for the object
+        self.name = name 
+        self.build_year = build_year 
+        
+    def SayHello(self):
+        print("Hello, I am " + self.name) 
+        
+    def SetName(self, name):
+        self.name = name 
+    
+    def GetName(self):
+        return self.name 
+    
+    def SetBuildYear(self, build_year):
+        self.build_year = build_year 
+        
+    def GetBuildYear(self):
+        return str(self.build_year)
+    
+if __name__ == "__main__":
+    x = Robot("John", 2015)
+    y = Robot("Marvin", 2018)
+    
+    for robots in [x,y]:
+        robots.SayHello() 
+        print("I was built in the year " + robots.GetBuildYear() + "!")
+    
+    
+    
+    

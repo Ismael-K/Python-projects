@@ -1,0 +1,12 @@
+'''
+
+'''
+import shelve
+
+s = shelve.open('test_shelf.db', flag = 'r')
+try:
+    existing = s['key1']["int"]
+finally:
+    s.close()
+
+print(existing)
