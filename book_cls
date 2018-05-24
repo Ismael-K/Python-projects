@@ -1,0 +1,28 @@
+'''
+
+
+Create a Book class
+Initialize the object with two arguments, name and author
+Create two functions 
+
+Function 1: getBasicInformation , this should return name and author
+
+Function 2: calculateYearsFromRelease, 
+'''
+class Book():
+    def __init__(self, name, author):
+        self.name = name 
+        self.author = author 
+        
+    def getBasicInformation(self):
+        return "Name: " + self.name + ", Author: " + self.author 
+    
+    def calculateYearsFromRelease(self, year):  #self is the binding for the book object
+        return(2018 - year)
+    
+    
+    
+    
+        
+        
+        
