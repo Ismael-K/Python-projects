@@ -1,0 +1,42 @@
+'''
+
+'''
+import sqlite3
+
+# First, let's connect to the database.
+# If the DB does not exist, it will create one
+
+conn = sqlite3.connect('mega.db')
+
+# Define a cursor
+
+'''
+A database cursor is a control structure that enables
+to traverse through the records in a database
+
+'''
+cursor = conn.cursor()   # This creates a new cursor
+
+# Create a Table inside mega.db schema
+# Create Statement is an SQL Statement
+# SQL - Structured Query Language
+# SQL Statement has id field - This is a Primary Key
+cursor.execute("""
+    CREATE TABLE Table1 (
+        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,    
+        Col1 TEXT NOT NULL,
+        Col2 TEXT NOT NULL,
+        Col3 TEXT NOT NULL,
+        Col4 TEXT NOT NULL,
+        Col5 TEXT NOT NULL
+    
+    );    
+""")
+print("Table created successfully")
+#Close DB Connection
+conn.close()
+
+
+
+
+
