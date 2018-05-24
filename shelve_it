@@ -1,0 +1,18 @@
+'''
+
+'''
+import shelve
+
+print("Shelving lists")
+shelveobj = shelve.open("pickles2.dat")
+shelveobj["variety"] = ["sweet", "hot", "dill"]
+shelveobj["shape"] = ["whole", "spear", "chip"]
+shelveobj["brand"] = ["Claussen", "Heinz", "Vlassic"]
+shelveobj.sync()
+
+print("Retrieve data from shelves")
+print("Brand - ", shelveobj["brand"])
+print("Variety - ", shelveobj["variety"])
+print("Shape - ", shelveobj["shape"])
+
+shelveobj.close()
