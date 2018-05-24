@@ -1,0 +1,11 @@
+'''
+
+'''
+from urllib.request import urlopen 
+
+def read_url_data(urlName):
+    if urlName.startswith(('http:', 'https:', 'ftp:')):
+        return urlopen(urlName).read()
+    
+if __name__ == '__main__':     # Python method to indicate a main function for this program
+    print(read_url_data('http://www.cnn.com'))
