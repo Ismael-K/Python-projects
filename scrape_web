@@ -1,7 +1,5 @@
 '''
-Created on May 8, 2018
 
-@author: I_K_
 '''
 import urllib.request as urllib2 
 from bs4 import BeautifulSoup 
